@@ -8,8 +8,8 @@ export JAVA_HOME="$PREFIX/lib/jvm/java-17-openjdk"
 export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_NDK_HOME:$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-aarch64/bin:$HOME/gradle/gradle-8.13/bin:$PATH"
 EOF
 source ~/.bashrc
-apt update
-apt install aapt aapt2 aidl android-tools apksigner aria2 curl d8 jq openjdk-17 unzip -y
+pkg update
+pkg install aapt aapt2 aidl android-tools apksigner aria2 curl d8 jq openjdk-17 unzip -y
 cd $HOME
 aria2c https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
 unzip commandlinetools-linux-13114758_latest.zip
