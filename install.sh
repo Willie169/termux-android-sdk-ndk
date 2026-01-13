@@ -38,6 +38,7 @@ curl -fsSL "https://api.github.com/repos/lzhiyong/termux-ndk/releases/latest" | 
 rm android-ndk-*.7z
 cd $HOME/Android
 mv android-ndk-* android-ndk
+cd $HOME
 java -version
 gradle -v
 sdkmanager --version
