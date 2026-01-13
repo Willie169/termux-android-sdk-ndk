@@ -9,7 +9,7 @@ export PATH="$PATH:$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$AN
 EOF
 source ~/.bashrc
 apt update
-apt install aapt aapt2 aidl android-tools apksigner aria2 curl d8 openjdk-17 unzip -y
+apt install aapt aapt2 aidl android-tools apksigner aria2 curl d8 jq openjdk-17 unzip -y
 cd $HOME
 aria2c https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
 unzip commandlinetools-linux-13114758_latest.zip
