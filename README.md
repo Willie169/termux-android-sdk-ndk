@@ -20,10 +20,10 @@ Run installer:
 This will non-interactively install:
 
 * Required Termux packages:
-  * `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `curl`, `d8`, `jq`, `openjdk-17`, `unzip`.
+  * `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip`.
 * Downloads and installs:
   * Android SDK (Android Command-line tools, platform-tools, API 36 platforms)
-  * Android NDK (latest aarch64 build)
+  * Android NDK r29
   * Gradle 8.13
 * Configures environment variables:
   * `ANDROID_HOME` / `ANDROID_SDK_ROOT`: SDK root
