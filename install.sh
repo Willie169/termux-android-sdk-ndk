@@ -39,8 +39,3 @@ rm android-ndk-*.7z
 cd $HOME/Android
 mv android-ndk-* android-ndk
 cd $HOME
-java -version
-gradle -v
-sdkmanager --version
-adb version
-ndk-build --version
