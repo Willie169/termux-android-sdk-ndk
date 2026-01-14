@@ -24,18 +24,16 @@ This will non-interactively install:
 * Downloads and installs:
   * Android SDK (Android Command-line tools, platform-tools, API 36 platforms)
   * Android NDK r29
-  * Gradle 8.13
 * Configures environment variables:
   * `ANDROID_HOME` / `ANDROID_SDK_ROOT`: SDK root
   * `ANDROID_NDK_HOME`: NDK root
   * `JAVA_HOME`: OpenJDK 17
-  * Updates `PATH` to include SDK tools, platform-tools, NDK tools, NDK toolchains, and Gradle
+  * Updates `PATH` to include SDK tools, platform-tools, NDK tools, and NDK toolchains
 
 ## Verification
 
 ```
 java -version
-gradle -v
 sdkmanager --version
 adb version
 ndk-build --version
