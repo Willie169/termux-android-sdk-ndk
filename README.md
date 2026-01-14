@@ -19,24 +19,18 @@ Run installer:
 ```
 This will non-interactively install:
 
-* Required Termux packages:
-  * `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip`.
-* Downloads and installs:
-  * Android SDK (Android Command-line tools, platform-tools, API 36 platforms)
-  * Android NDK r29
-* Configures environment variables:
-  * `ANDROID_HOME` / `ANDROID_SDK_ROOT`: SDK root
-  * `ANDROID_NDK_HOME`: NDK root
-  * `JAVA_HOME`: OpenJDK 17
-  * Updates `PATH` to include SDK tools, platform-tools, NDK tools, and NDK toolchains
+* Required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip` with Gradle override in `~/.gradle/gradle.properties`
+* Android SDK (Android Command-line tools, platform-tools, API 36 platforms)
+* Android NDK r29
 
-## Verification
-
+and configure environment variables in `~/.bashrc`:
 ```
-java -version
-sdkmanager --version
-adb version
-ndk-build --version
+export JAVA_HOME="$PREFIX/lib/jvm/java-17-openjdk"
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export ANDROID_NDK_HOME="$HOME/Android/Sdk/ndk/android-ndk-r29"
+export ANDROID_NDK_TOOLCHAINS="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-aarch64"
+export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_NDK_HOME:$ANDROID_NDK_TOOLCHAINS/bin:$PATH"
 ```
 
 ## Termux
