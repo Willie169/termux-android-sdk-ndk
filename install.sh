@@ -31,3 +31,9 @@ cd $HOME
 aria2c https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.7z
 7z x android-ndk-r29.7z -o$HOME/Android/Sdk/ndk
 rm android-ndk-r29.7z
+cat > ~/.gradle/gradle.properties << 'EOF'
+android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
+android.aaptFromMavenOverride=/data/data/com.termux/files/usr/bin/aapt
+android.zipAlignOverride=/data/data/com.termux/files/usr/bin/zipalign
+android.d8Override=/data/data/com.termux/files/usr/bin/d8
+EOF
