@@ -35,7 +35,4 @@ rm android-ndk-r29.7z
 mkdir -p ~/.gradle
 cat > ~/.gradle/gradle.properties << 'EOF'
 android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
-android.aaptFromMavenOverride=/data/data/com.termux/files/usr/bin/aapt
-android.zipAlignOverride=/data/data/com.termux/files/usr/bin/zipalign
-android.d8Override=/data/data/com.termux/files/usr/bin/d8
 EOF

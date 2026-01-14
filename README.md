@@ -17,22 +17,14 @@ Run installer:
 ```
 ./install.sh
 ```
-This will non-interactively install:
+This will non-interactively;
 
-* Required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip`, with Gradle overrides in `~/.gradle/gradle.properties`
-* Android Command-line tools
-* Android SDK: "build-tools;30.0.3" "platform-tools" "platforms;android-33"
-* Android NDK r29 from <https://github.com/lzhiyong/termux-ndk>
-
-and configure environment variables in `~/.bashrc`:
-```
-export JAVA_HOME="$PREFIX/lib/jvm/java-17-openjdk"
-export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
-export ANDROID_HOME="$ANDROID_SDK_ROOT"
-export ANDROID_NDK_HOME="$HOME/Android/Sdk/ndk/android-ndk-r29"
-export ANDROID_NDK_TOOLCHAINS="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-aarch64"
-export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_NDK_HOME:$ANDROID_NDK_TOOLCHAINS/bin:$PATH"
-```
+* Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip`.
+* Install Android Command-line tools.
+* Install Android SDK `"build-tools;30.0.3" "platform-tools" "platforms;android-33".
+* Install Android NDK r29 from <https://github.com/lzhiyong/termux-ndk>`.
+* Add `android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2` in `~/.gradle/gradle.properties`.
+* Configure environment variables `JAVA_HOME`, `ANDROID_SDK_ROOT`, `ANDROID_HOME`, `ANDROID_NDK_HOME`, `ANDROID_NDK_TOOLCHAINS`, and `PATH` in `~/.bashrc`.
 
 ## Termux
 
@@ -40,7 +32,7 @@ Termux (`com.termux`) can be installed from [F-Droid](https://f-droid.org/packag
 
 **WARNING**: If you installed termux from Google Play or a very old version, then you will receive package command errors. Google Play builds are deprecated and no longer supported. It is highly recommended that you update to termux-app v0.118.0 or higher as soon as possible for various bug fixes, including a critical world-readable vulnerability reported at <https://termux.github.io/general/2022/02/15/termux-apps-vulnerability-disclosures.html>. It is recommended that you shift to F-Droid or GitHub releases.
 
-Refer to [**Android-Non-Root**](https://github.com/Willie169/Android-Non-Root) for more information.
+Refer to [**Android-Non-Root**](https://github.com/Willie169/Android-Non-Root) and [**termux-sh**](https://github.com/Willie169/termux-sh) for more information.
 
 ## References
 
