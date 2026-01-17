@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-set -eu
+
 cat >> ~/.bashrc << 'EOF'
 export JAVA_HOME="$PREFIX/lib/jvm/java-17-openjdk"
 export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
