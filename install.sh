@@ -10,9 +10,9 @@ export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_
 EOF
 source ~/.bashrc
 pkg update
-pkg install aapt aapt2 aidl android-tools apksigner aria2 d8 jq openjdk-17 unzip -y
+pkg install aapt aapt2 aidl android-tools apksigner d8 jq openjdk-17 unzip wget -y
 cd $HOME
-aria2c https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
 unzip commandlinetools-linux-13114758_latest.zip
 rm commandlinetools-linux-13114758_latest.zip
 mkdir Android
@@ -29,7 +29,7 @@ rm -r $HOME/cmdline-tools
 cd bin
 echo y | ./sdkmanager "build-tools;30.0.3" "platform-tools" "platforms;android-33"
 cd $HOME
-aria2c https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.7z
+wget https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.7z
 7z x android-ndk-r29.7z -o$HOME/Android/Sdk/ndk
 rm android-ndk-r29.7z
 mkdir -p ~/.gradle
