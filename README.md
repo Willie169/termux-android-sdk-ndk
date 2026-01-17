@@ -19,7 +19,7 @@ Run installer:
 ```
 This will non-interactively;
 
-* Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `aria2`, `d8`, `jq`, `openjdk-17`, `unzip`.
+* Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `d8`, `jq`, `openjdk-17`, `unzip`, `wget`.
 * Install Android Command-line tools.
 * Install Android SDK `"build-tools;30.0.3" "platform-tools" "platforms;android-33".
 * Install Android NDK r29 from <https://github.com/lzhiyong/termux-ndk>`.
