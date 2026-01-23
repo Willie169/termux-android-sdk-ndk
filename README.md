@@ -21,7 +21,7 @@ This will non-interactively;
 
 * Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `d8`, `jq`, `openjdk-17`, `unzip`, `wget`.
 * Install Android Command-line tools.
-* Install Android SDK `"build-tools;30.0.3" "platform-tools" "platforms;android-33" "sources;android-33".
+* Install Android SDK `"build-tools;30.0.3" "platform-tools" "platforms;android-33" "sources;android-33"`.
 * Install Android NDK r29 from <https://github.com/lzhiyong/termux-ndk>`.
 * Add `android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2` in `~/.gradle/gradle.properties`.
 * Configure environment variables `JAVA_HOME`, `ANDROID_SDK_ROOT`, `ANDROID_HOME`, `ANDROID_NDK_HOME`, `ANDROID_NDK_TOOLCHAINS`, and `PATH` in `~/.bashrc`.
