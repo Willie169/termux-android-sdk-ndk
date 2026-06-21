@@ -11,6 +11,13 @@
 
 ## Usage
 
+Download `install.sh`:
+```
+pkg update
+pkg install wget -y
+wget https://raw.githubusercontent.com/Willie169/termux-android-sdk-ndk/refs/heads/main/install.sh
+```
+
 Run `./install.sh`. It will non-interactively:
 
 * Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `d8`, `jq`, `openjdk-21`, `unzip`, `wget`.
@@ -21,7 +28,6 @@ Run `./install.sh`. It will non-interactively:
 * Set environment variables `JAVA_HOME`, `ANDROID_HOME`, `ANDROID_SDK_ROOT`, `ANDROID_NDK_HOME`, `ANDROID_NDK_TOOLCHAINS`, and `PATH` in environment variable `PROFILE` if it is set and `~/.bashrc` otherwise.
 
 Examples:
-
 ```
 ./install.sh
 PROFILE="${HOME}/.zshrc" ./install.sh
