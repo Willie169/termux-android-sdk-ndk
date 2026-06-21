@@ -3,8 +3,6 @@
 ## Prerequisites
 
 <ul>
-<li>Sufficient storage: Approximately 2.1 GB.</li>
-<li>Sufficient power supply.</li>
 <li>Stable internet connection.</li>
 <li>It is recommended to turn off the battery optimization for Termux.</li>
 <li>It is recommended to hold wakelock while running the script. You can do so by opening Termux, pulling down the notification bar, and then tapping <strong>Acquire wakelock</strong> on the notification of Termux.</li>
@@ -13,18 +11,22 @@
 
 ## Usage
 
-Run installer:
-```
-./install.sh
-```
-This will non-interactively;
+Run `./install.sh`. It will non-interactively:
 
-* Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `d8`, `jq`, `openjdk-17`, `unzip`, `wget`.
+* Install required Termux packages: `aapt`, `aapt2`, `aidl`, `android-tools`, `apksigner`, `d8`, `jq`, `openjdk-21`, `unzip`, `wget`.
 * Install Android Command-line tools.
-* Install Android SDK `"build-tools;30.0.3" "platform-tools" "platforms;android-33" "sources;android-33"`.
+* Install Android SDK in the argument. Note that `emulator` will not work.
 * Install Android NDK r29 from <https://github.com/lzhiyong/termux-ndk>`.
 * Add `android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2` in `~/.gradle/gradle.properties`.
-* Configure environment variables `JAVA_HOME`, `ANDROID_SDK_ROOT`, `ANDROID_HOME`, `ANDROID_NDK_HOME`, `ANDROID_NDK_TOOLCHAINS`, and `PATH` in `~/.bashrc`.
+* Set environment variables `JAVA_HOME`, `ANDROID_HOME`, `ANDROID_SDK_ROOT`, `ANDROID_NDK_HOME`, `ANDROID_NDK_TOOLCHAINS`, and `PATH` in environment variable `PROFILE` if it is set and `~/.bashrc` otherwise.
+
+Examples:
+
+```
+./install.sh
+PROFILE="${HOME}/.zshrc" ./install.sh
+PROFILE=/dev/null ./install.sh "platform-tools" "build-tools;30.0.3" "platforms;android-33" "sources;android-33"
+```
 
 ## Termux
 
