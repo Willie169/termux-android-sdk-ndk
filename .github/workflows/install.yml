@@ -28,7 +28,7 @@ jobs:
       - name: Run install.sh
         timeout-minutes: 360
         run: |
-          docker run --rm -v "$HOME/termux-android-sdk-ndk:/data/data/com.termux/files/home/termux-android-sdk-ndk" -w "/data/data/com.termux/files/home/termux-android-sdk-ndk" --privileged termux/termux-docker bash -c '
+          sudo docker run --rm -v "$HOME/termux-android-sdk-ndk:/data/data/com.termux/files/home/termux-android-sdk-ndk" -w "/data/data/com.termux/files/home/termux-android-sdk-ndk" --privileged termux/termux-docker bash -c '
             set -euxo pipefail
             echo "deb https://packages.termux.dev/apt/termux-main stable main" > /data/data/com.termux/files/usr/etc/apt/sources.list
             ./install.sh "platform-tools"
