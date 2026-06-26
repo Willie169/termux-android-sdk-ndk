@@ -24,7 +24,7 @@ jobs:
           sudo DEBIAN_FRONTEND=noninteractive apt install docker-ce -y
           git clone https://github.com/Willie169/termux-android-sdk-ndk.git
           cd termux-android-sdk-ndk
-          sed -Ei 's|(#!/data/data/com\.termux/files/usr/bin/bash)|\1\nset -euxo pipefail|; s|pkg |apt |' install.sh
+          sed -Ei 's|(#!/data/data/com\.termux/files/usr/bin/bash)|\1\nset -euxo pipefail|' install.sh
       - name: Run install.sh
         timeout-minutes: 360
         run: |
