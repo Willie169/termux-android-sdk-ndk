@@ -13,6 +13,7 @@ export ANDROID_NDK_TOOLCHAINS="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/linu
 export PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${ANDROID_NDK_TOOLCHAINS}/bin:${PATH}"
 EOF
 else
+# shellcheck disable=2016
 echo '
 export JAVA_HOME="$PREFIX/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
@@ -46,6 +47,9 @@ mkdir -p ~/Android/Sdk/cmdline-tools/latest
 mv cmdline-tools/* ~/Android/Sdk/cmdline-tools/latest
 rm -r cmdline-tools
 cd ~/Android/Sdk/cmdline-tools/latest/bin || exit
+for f in *; do
+test -f "$f" && termux-fix-shebang "$f"
+done
 if [ "$#" -gt 0 ]; then
 echo y | ./sdkmanager "$@"
 fi
