@@ -41,7 +41,7 @@ export ANDROID_NDK_HOME="${HOME}/Android/Sdk/ndk/android-ndk-r29"
 export ANDROID_NDK_TOOLCHAINS="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/linux-aarch64"
 export PATH="${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${ANDROID_NDK_TOOLCHAINS}/bin:${PATH}"
 pkg update
-pkg install aapt aapt2 aidl android-tools apksigner d8 jq openjdk-21 p7zip unzip wget -y
+pkg install aapt aapt2 aidl android-tools apksigner d8 jq openjdk-21 unzip wget -y
 wget --tries=100 --retry-connrefused --waitretry=5 -O studio.html https://developer.android.com/studio
 # shellcheck disable=2155
 export CMDLINETOOLS="$(awk '/<table class="download">/ { count++ }
