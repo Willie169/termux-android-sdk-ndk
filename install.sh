@@ -1,5 +1,16 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+# GitHub Action termux/termux-docker possible errors to be prevented:
+# + tar -xJf file.tar.xz
+# tar: Unknown option Jf (see "tar --help")
+# and
+# + tar -xf -
+# tar: chown ...: Operation not permitted
+# use
+# xz -d file.tar.xz
+# gzip -d file.tar.gz
+# tar -xf file.tar || true
+
 : "${PROFILE:=${HOME}/.bashrc}"
 cd ~ || exit
 if [ "$PROFILE" != '/dev/null' ]; then
@@ -55,9 +66,11 @@ if [ "$#" -gt 0 ]; then
 echo y | ./sdkmanager "$@"
 fi
 cd ~ || exit
-wget --tries=100 --retry-connrefused --waitretry=5 https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.7z
-7z x android-ndk-r29-aarch64.7z -o"${HOME}/Android/Sdk/ndk"
-rm android-ndk-r29-aarch64.7z*
+wget --tries=100 --retry-connrefused --waitretry=5 https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.tar.xz
+xz -d android-ndk-r29-aarch64.tar.xz
+tar -xf android-ndk-r29-aarch64.tar || true
+rm android-ndk-r29-aarch64.tar*
+mv android-ndk-r29 ~/Android/Sdk/ndk/
 mkdir -p ~/.gradle
 cat > ~/.gradle/gradle.properties << 'EOF'
 android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
