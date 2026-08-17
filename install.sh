@@ -14,7 +14,7 @@
 : "${PROFILE:=${HOME}/.bashrc}"
 cd ~ || exit
 if [ "$PROFILE" != '/dev/null' ]; then
-cat >> "$PROFILE" <<'EOF'
+  cat >>"$PROFILE" <<'EOF'
 
 export JAVA_HOME="$PREFIX/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
@@ -24,8 +24,8 @@ export ANDROID_NDK_TOOLCHAINS="${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/linu
 export PATH="${PATH}:${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_NDK_HOME}:${ANDROID_NDK_TOOLCHAINS}/bin"
 EOF
 else
-# shellcheck disable=2016
-echo '
+  # shellcheck disable=2016
+  echo '
 export JAVA_HOME="$PREFIX/lib/jvm/java-21-openjdk"
 export ANDROID_HOME="${HOME}/Android/Sdk"
 export ANDROID_SDK_ROOT="${ANDROID_HOME}"
@@ -60,10 +60,10 @@ rm -r cmdline-tools
 rm "$CMDLINETOOLS"*
 cd ~/Android/Sdk/cmdline-tools/latest/bin || exit
 for f in *; do
-test -f "$f" && termux-fix-shebang "$f"
+  test -f "$f" && termux-fix-shebang "$f"
 done
 if [ "$#" -gt 0 ]; then
-echo y | ./sdkmanager "$@"
+  echo y | ./sdkmanager "$@"
 fi
 cd ~ || exit
 wget --tries=100 --retry-connrefused --waitretry=5 https://github.com/lzhiyong/termux-ndk/releases/download/android-ndk/android-ndk-r29-aarch64.tar.xz
@@ -72,6 +72,6 @@ tar -xf android-ndk-r29-aarch64.tar || true
 rm android-ndk-r29-aarch64.tar*
 mv android-ndk-r29 ~/Android/Sdk/ndk/
 mkdir -p ~/.gradle
-cat > ~/.gradle/gradle.properties << 'EOF'
+cat >~/.gradle/gradle.properties <<'EOF'
 android.aapt2FromMavenOverride=/data/data/com.termux/files/usr/bin/aapt2
 EOF
